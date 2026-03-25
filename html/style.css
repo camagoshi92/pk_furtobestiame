@@ -1,0 +1,76 @@
+:root{
+  --accent: #ffd200;
+
+  /* padding interno del testo */
+  --pad-x: clamp(10px, 2vw, 20px);
+  --pad-y: clamp(4px, 1vw, 10px);
+
+  /* larghezza complessiva del banner (ridotta) */
+  --banner-w: min(65vw, 700px);
+}
+
+*{ box-sizing:border-box; user-select:none; }
+html,body{ margin:0; padding:0; width:100%; height:100%; overflow:hidden; background:transparent; }
+
+#wrap{
+  position:fixed;
+  top:16px; left:50%;
+  transform:translateX(-50%);
+  z-index:9999;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity .18s ease-in-out;
+}
+#wrap.show{ opacity:1; }
+.hidden{ display:none; }
+
+/* Contenitore del banner */
+.banner{
+  position:relative;
+  width: var(--banner-w);
+}
+
+/* Immagine cornice */
+.frame{
+  width:100%;
+  height:auto;
+  display:block;
+  image-rendering:auto;
+}
+
+/* Contenuto centrato con padding ridotto */
+.content{
+  position:absolute;
+  inset: var(--pad-y) var(--pad-x);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap: 4px; /* compatto */
+  text-align:center;
+}
+
+
+/* Titolo e sottotitolo più grandi */
+.title,
+.subtitle {
+  font-family: "Times New Roman", serif;
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: clamp(16px, 2vw, 26px); /* più grande */
+  color: #111;
+  margin: 0;
+  text-align: center;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+
+/* Su schermi molto grandi NON riespandere troppo */
+@media (min-width: 1600px){
+  :root{
+    --pad-x: 22px;
+    --pad-y: 12px;
+    --banner-w: 760px; /* limite superiore soft */
+  }
+}
