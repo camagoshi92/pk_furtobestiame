@@ -4,8 +4,8 @@ rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aw
 
 lua54 'yes'
 
-name 'pk_furtobestiame'
-author 'camagoshi92'
+name 'vorp_ranchrob'
+author 'zaini'
 description 'Furto bestiame per VORP: pecore con spinta realistica e allarmi ranch'
 version '1.1.0'
 
